@@ -25,7 +25,7 @@
       "scm/title": [
         {
           "command": "gitNoVerify.commit",
-          "group": "commit",
+          "group": "2_commit",
           "when": "scmProvider == git"
         }
       ]
