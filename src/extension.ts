@@ -1,31 +1,25 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { GitExtension } from './git'; // Import just the extension type
+import { GitExtension, Repository } from './git'; // Import Repository type
 
 export function activate(context: vscode.ExtensionContext) {
 	const gitExtension = vscode.extensions.getExtension<GitExtension>('vscode.git');
 
 	if (!gitExtension) {
-		vscode.window.showErrorMessage('Extensión de Git no disponible');
+		vscode.window.showErrorMessage('Git extension not available');
 		return;
 	}
 
 	const git = gitExtension.exports.getAPI(1);
 
-	// Registramos el comando: "gitNoVerify.commit"
-	const disposable = vscode.commands.registerCommand('gitNoVerify.commit', async (resource?: any) => {
-		let repo;
+	// Register the command: "gitNoVerify.commit"
+	const disposable = vscode.commands.registerCommand('gitNoVerify.commit', async (repository?: Repository) => {
+		let repo: Repository | undefined;
 
-		if (resource) {
-			// If executed from the SCM GUI, determine the repository from the resource
-			if (resource.resourceUri) {
-				// Handle case where resource has a resourceUri property
-				repo = git.repositories.find(r => resource.resourceUri.fsPath.startsWith(r.rootUri.fsPath));
-			} else if (resource.rootUri) {
-				// Handle case where resource is directly a repository object
-				repo = git.repositories.find(r => r.rootUri.fsPath === resource.rootUri.fsPath);
-			}
+		if (repository && repository.rootUri) {
+			// Handle case where resource is directly a repository object
+			repo = git.repositories.find(r => r.rootUri.fsPath === repository.rootUri.fsPath);
 		}
 
 		if (!repo) {
@@ -33,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const repositories = git.repositories;
 
 			if (repositories.length === 0) {
-				vscode.window.showErrorMessage('No hay repositorios Git disponibles');
+				vscode.window.showErrorMessage('No Git repositories available');
 				return;
 			}
 
@@ -48,11 +42,11 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 
 			const selectedRepo = await vscode.window.showQuickPick(repoItems, {
-				placeHolder: 'Selecciona un repositorio para hacer commit'
+				placeHolder: 'Select a repository to commit'
 			});
 
 			if (!selectedRepo) {
-				vscode.window.showInformationMessage('No se seleccionó ningún repositorio');
+				vscode.window.showInformationMessage('No repository selected');
 				return;
 			}
 
@@ -60,36 +54,32 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		if (!repo) {
-			vscode.window.showErrorMessage('No se pudo determinar el repositorio');
+			vscode.window.showErrorMessage('Could not determine the repository');
 			return;
 		}
 
-		// Example: Show the selected repository's path and branch in the console
-		console.log(`Repositorio seleccionado: ${repo.rootUri.path}, Rama: ${repo.state.HEAD?.name}`);
-
-		// Obtenemos el mensaje que el usuario ha escrito en la caja de texto
+		// Get the message the user has written in the input box
 		const message = repo.inputBox.value;
 		if (!message || message.trim() === '') {
-			vscode.window.showWarningMessage('No hay mensaje de commit');
+			vscode.window.showWarningMessage('No commit message');
 			return;
 		}
 
 		try {
-			// Llamamos a la API de commit, pero con un override de parámetros 
-			// para que añada --no-verify
+			// Call the commit API with parameter override to add --no-verify
 			await repo.commit(message, { noVerify: true });
 
 			repo.inputBox.value = '';
-			vscode.window.showInformationMessage('Commit sin verificación realizado');
+			vscode.window.showInformationMessage('Commit without verification completed');
 		} catch (error) {
-			vscode.window.showErrorMessage(`Error al hacer commit: ${error.message}`);
+			vscode.window.showErrorMessage(`Error while committing: ${error.message}`);
 		}
 
 	});
 
 	context.subscriptions.push(disposable);
 
-	// Registramos el comando: "gitNoVerify.commit"
+	// Register the test command
 	const test = vscode.commands.registerCommand('gitNoVerify.test', async () => {
 
 		vscode.window.showInformationMessage('Extension initialized');
