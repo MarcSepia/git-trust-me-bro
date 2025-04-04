@@ -78,14 +78,6 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
-
-	// Register the test command
-	const test = vscode.commands.registerCommand('gitNoVerify.test', async () => {
-
-		vscode.window.showInformationMessage('Extension initialized');
-	});
-
-	context.subscriptions.push(test);
 }
 
 
