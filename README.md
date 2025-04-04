@@ -1,71 +1,46 @@
-# helloworld README
+# TrustMeGit
 
-This is the README for your extension "helloworld". After writing up a brief description, we recommend including the following sections.
+**Skip Git hooks with style. Commit and push with `--no-verify` directly from VSCode. Trust me, I know what I’m doing.**
 
-## Features
+## 🚀 What is TrustMeGit?
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+`TrustMeGit` is a lightweight VSCode extension that adds quick actions to **commit** and **push** your code using the `--no-verify` flag — bypassing Git hooks like linters, tests, or any custom scripts that would normally block the action.
 
-For example if there is an image subfolder under your extension project workspace:
+It's perfect for those moments when you just *know* what you're doing, and need to get the job done fast.
 
-\!\[feature X\]\(images/feature-x.png\)
+## ⚙️ Features
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Commit with `--no-verify` from the command palette or button
+- Push with `--no-verify` easily
+- Avoid those annoying hook-related blocks when you're sure your code is fine
+- Works seamlessly with your existing Git setup in VSCode
 
-## Requirements
+## 🧩 Why?
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Git hooks are great. They catch bugs and enforce standards.  
+But sometimes... you just need to bypass them. Maybe:
+- You're working on a WIP branch
+- The hook is failing for the wrong reasons
+- You just need to ship now and fix later
 
-## Extension Settings
+That’s where **TrustMeGit** comes in.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 🛠️ Installation
 
-For example:
+1. Go to the [VSCode Marketplace](https://marketplace.visualstudio.com/) and search for `TrustMeGit`
+2. Click **Install**
+3. Done!
 
-This extension contributes the following settings:
+## 💡 Usage
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
+- Type `TrustMeGit: Commit --no-verify` or `TrustMeGit: Push --no-verify`
+- Alternatively, use the buttons in the Source Control panel (if provided)
 
-## Known Issues
+## 📸 Screenshots
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+> *(Add some VSCode screenshots here of the command palette and buttons in action)*
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Made with ❤️ and no hooks.
