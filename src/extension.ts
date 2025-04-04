@@ -1,9 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { GitExtension } from './git'; // Import just the extension type
 
 export function activate(context: vscode.ExtensionContext) {
-	const gitExtension = vscode.extensions.getExtension('vscode.git');
+	const gitExtension = vscode.extensions.getExtension<GitExtension>('vscode.git');
+
 	if (!gitExtension) {
 		vscode.window.showErrorMessage('Extensión de Git no disponible');
 		return;
@@ -77,10 +79,9 @@ export function activate(context: vscode.ExtensionContext) {
 			// para que añada --no-verify
 			await repo.commit(message, { noVerify: true });
 
-			// Limpia la inputBox (opcional)
 			repo.inputBox.value = '';
 			vscode.window.showInformationMessage('Commit sin verificación realizado');
-		} catch (error: any) {
+		} catch (error) {
 			vscode.window.showErrorMessage(`Error al hacer commit: ${error.message}`);
 		}
 
