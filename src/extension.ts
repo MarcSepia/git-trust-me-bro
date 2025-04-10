@@ -13,8 +13,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const git = gitExtension.exports.getAPI(1);
 
-	// Register the command: "gitNoVerify.commit"
-	const disposable = vscode.commands.registerCommand('gitNoVerify.commit', async (repository?: Repository) => {
+	// Register the command: "GitTrustMeBro.commit"
+	const disposable = vscode.commands.registerCommand('GitTrustMeBro.commit', async (repository?: Repository) => {
 		let repo: Repository | undefined;
 
 		if (repository && repository.rootUri) {

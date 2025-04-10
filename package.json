@@ -1,13 +1,15 @@
 {
-  "name": "helloworld",
-  "displayName": "helloworld",
+  "name": "git-trust-me-bro",
+  "displayName": "GitTrustMeBro",
   "description": "",
   "version": "0.0.1",
+  "publisher": "sepia",
+  "repository": "https://github.com/MarcSepia/git-trust-me-bro.git",
   "engines": {
     "vscode": "^1.98.0"
   },
   "categories": [
-    "Other"
+    "SCM Providers"
   ],
   "activationEvents": [
     "onView:scm"
@@ -16,7 +18,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "gitNoVerify.commit",
+        "command": "GitTrustMeBro.commit",
         "title": "Commit (no-verify)",
         "category": "Git (No Verify)"
       }
@@ -24,7 +26,7 @@
     "menus": {
       "scm/title": [
         {
-          "command": "gitNoVerify.commit",
+          "command": "GitTrustMeBro.commit",
           "group": "2_commit",
           "when": "scmProvider == git"
         }
