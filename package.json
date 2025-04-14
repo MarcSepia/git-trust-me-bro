@@ -1,7 +1,7 @@
 {
   "name": "git-trust-me-bro",
   "displayName": "GitTrustMeBro",
-  "description": "Allows you to execute git operations with the --no-verify option.",
+  "description": "Allows you to git commit with the --no-verify option.",
   "license": "MIT",
   "version": "0.0.1",
   "publisher": "sepia-dev",
