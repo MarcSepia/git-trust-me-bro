@@ -40,11 +40,11 @@ That’s where **GitTrustMeBro** comes in.
 
 Command palette command
 
-![Command palette GitTrustMeBro commit](assets/command-palette-example.png)
+![Command palette GitTrustMeBro commit](./assets/command-palette-example.png)
 
 Source control commit button
 
-![Source control GitTrustMeBro commit button](assets/scm-example.png)
+![Source control GitTrustMeBro commit button](./assets/scm-example.png)
 
 ---
 
