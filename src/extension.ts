@@ -71,7 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			repo.inputBox.value = '';
 			vscode.window.showInformationMessage('Commit without verification completed');
-		} catch (error) {
+		} catch (error: any) {
 			vscode.window.showErrorMessage(`Error while committing: ${error.message}`);
 		}
 
