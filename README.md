@@ -38,7 +38,13 @@ That’s where **GitTrustMeBro** comes in.
 
 ## 📸 Screenshots
 
-> *(Add some VSCode screenshots here of the command palette and buttons in action)*
+Command palette command
+
+![Command palette GitTrustMeBro commit](assets/command-palette-example.png)
+
+Source control commit button
+
+![Source control GitTrustMeBro commit button](assets/scm-example.png)
 
 ---
 
