@@ -1,10 +1,24 @@
 {
   "name": "git-trust-me-bro",
   "displayName": "GitTrustMeBro",
-  "description": "",
+  "description": "Allows you to execute git operations with the --no-verify option.",
+  "license": "MIT",
   "version": "0.0.1",
-  "publisher": "sepia",
-  "repository": "https://github.com/MarcSepia/git-trust-me-bro.git",
+  "publisher": "sepia-dev",
+  "homepage": "https://github.com/MarcSepia/git-trust-me-bro/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcSepia/git-trust-me-bro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcSepia/git-trust-me-bro/issues",
+    "email": "sepia.developer@gmail.com"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#BF9636",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.98.0"
   },
