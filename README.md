@@ -36,6 +36,18 @@ That’s where **GitTrustMeBro** comes in.
 - Type `GitTrustMeBro: Commit --no-verify`
 - Alternatively, use the buttons in the Source Control panel
 
+
+## 📸 Screenshots
+
+Command palette command
+
+![Command palette GitTrustMeBro commit](assets/command-palette-example.png)
+
+Source control commit button
+
+![Source control GitTrustMeBro commit button](assets/scm-example.png)
+
+
 ---
 
 Made with ❤️ and no hooks.
