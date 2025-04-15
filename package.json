@@ -33,8 +33,8 @@
     "commands": [
       {
         "command": "GitTrustMeBro.commit",
-        "title": "Commit (No Verify)",
-        "category": "Git (no-verify)"
+        "title": "Commit --no-verify",
+        "category": "GitTrustMeBro"
       }
     ],
     "menus": {
