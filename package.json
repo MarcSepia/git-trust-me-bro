@@ -3,7 +3,7 @@
   "displayName": "GitTrustMeBro",
   "description": "Allows you to git commit with the --no-verify option.",
   "license": "MIT",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "publisher": "sepia-dev",
   "homepage": "https://github.com/MarcSepia/git-trust-me-bro/blob/master/README.md",
   "repository": {
